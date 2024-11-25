@@ -1,4 +1,4 @@
-This repository contains the official implementation of FUGCF.
+This repository contains the implementation of FUGCF.
 
 ## Installation
 To set up the environment for running FUGCF, follow these steps:
