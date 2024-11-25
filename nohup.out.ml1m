@@ -1,0 +1,42 @@
+nohup: 忽略输入
+2024-11-25 12:03:33.980962: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/home/xjc/anaconda3/lib:
+2024-11-25 12:03:33.981041: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/home/xjc/anaconda3/lib:
+2024-11-25 12:03:33.981048: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+len(index):  1000209
+index:  [0 0 0 0 0 0 0 0 0 0]
+data:  [[1.000e+00 1.193e+03 5.000e+00]
+ [1.000e+00 6.610e+02 3.000e+00]
+ [1.000e+00 9.140e+02 3.000e+00]
+ [1.000e+00 3.408e+03 4.000e+00]
+ [1.000e+00 2.355e+03 5.000e+00]
+ [1.000e+00 1.197e+03 3.000e+00]
+ [1.000e+00 1.287e+03 5.000e+00]
+ [1.000e+00 2.804e+03 5.000e+00]
+ [1.000e+00 5.940e+02 4.000e+00]
+ [1.000e+00 9.190e+02 4.000e+00]]
+len(data):  1000209
+data:  [[   0 1104    5]
+ [   0  639    3]
+ [   0  853    3]
+ ...
+ [6039 1007    2]
+ [6039 1842    5]
+ [6039  548    5]]
+# users: 6040
+# items: 3706
+# train interactions: 800167
+# val interactions: 0
+# test interactions: 115319
+norm_adj:  800167
+Matrix SVD Pre-processing time:  1.2421565055847168
+filtered_mat_sim_item:  1513675
+Positive Matrix Pre-processing time:  1.2781696319580078
+adj_mat.shape:  torch.Size([6040, 3706])
+length of s is:  148
+length of s_pos is:  148
+item_propensity:  [1.35062937 1.63477914 1.81169621 ... 3.41085626 4.30230288 1.90234694]
+item_propensity.shape:  (3706,)
+
+MSE value: 0.03179914876818657
+| end of step    0 | time =  5.84 | HR@10 = 35.9392 | HR@20 = 38.1963 | NDCG@10 = 37.1241 | NDCG@20 = 36.6348 | PSP@10 = 4.9157 | PSP@20 = 5.4427 | RECALL@10 = 21.8311 | RECALL@20 = 31.6985 | PRECISION@10 = 29.7152 | PRECISION@20 = 23.2376 | EUF@10 = 0.1629 | EUF@20 = 0.0821 | AUC = 0.9457 (TEST)
