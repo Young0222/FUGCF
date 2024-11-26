@@ -129,9 +129,9 @@ class FUGCF(nn.Module):
         mat_expo = torch.mm(self.adj_mat, A)
 
         # Normalization (col)
-        epsilon = 1e-8
+        gamma = 1e-8
         col_min = torch.min(mat_expo, dim=0, keepdim=True).values
-        mat_expo_shifted = mat_expo - col_min + epsilon
+        mat_expo_shifted = mat_expo - col_min + gamma
         col_sum = torch.sum(mat_expo_shifted, dim=0, keepdim=True)
         mat_expo = mat_expo_shifted / col_sum
 
@@ -164,7 +164,7 @@ class FUGCF(nn.Module):
         time_1 = time.time()
         mat_adjust = self.compute_P(T1, T2, mat_expo)
         time_2 = time.time()
-        adjustment_ratio = 0.2
-        mat_rating += mat_adjust.to_dense() * adjustment_ratio
+        epsilon = 0.2
+        mat_rating += mat_adjust.to_dense() * epsilon
 
         return mat_rating
